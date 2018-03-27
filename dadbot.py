@@ -1,6 +1,7 @@
 import os
 import time
 import re
+import random
 from slackclient import SlackClient
 
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
@@ -54,6 +55,9 @@ def handle_command(command, channel):
 
     if command.startswith('tell me about'):
         response = "Wesley is a nerd, and his code is lame"
+    if command.startswith('are we there yet?'):
+        response_bank = ['no', 'not yet', 'stop asking', 'no!']
+        response = random.choice(response_bank)
     else:
         response = "Hi '{}', I'm Dad.".format(command)
     # Sends the response back to the channel
