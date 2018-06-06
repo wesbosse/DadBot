@@ -1,2 +1,3 @@
 #ignoring calendar API credentials
 config/client_id.json
+*.ipynb_checkpoints
